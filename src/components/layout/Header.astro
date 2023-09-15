@@ -1,0 +1,182 @@
+---
+import ThemeToggle from "../ThemeToggle.astro";
+import Search from "../Search.astro";
+import { menuLinks } from "@/site-config";
+
+const url = new URL(Astro.request.url);
+---
+
+<script>
+	import { toggleClass } from "@/utils";
+	let headerEl: HTMLElement;
+	let menuButtonEl: HTMLButtonElement;
+	let menuOpen = false;
+
+	function toggleMobileMenu() {
+		toggleClass(headerEl, "menu-open");
+		menuOpen = !menuOpen;
+		menuButtonEl.setAttribute("aria-expanded", menuOpen.toString());
+	}
+
+	document.addEventListener("DOMContentLoaded", () => {
+		headerEl = document.getElementById("main-header")!;
+		menuButtonEl = document.getElementById("toggle-navigation-menu") as HTMLButtonElement;
+		menuButtonEl.addEventListener("click", toggleMobileMenu);
+	});
+
+	document.addEventListener("astro:after-swap", () => {
+		if (menuOpen) toggleMobileMenu();
+	});
+</script>
+
+<header
+	id="main-header"
+	class="group relative mb-28 flex items-center sm:ps-[4.5rem]"
+	transition:persist
+>
+	<div class="flex sm:flex-col">
+		<a
+			href="/"
+			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
+			aria-current={url.pathname === "/" ? "page" : false}
+		>
+			<svg
+				fill="#29bc89"
+				width="100px"
+				height="100px"
+				viewBox="0 0 8 8"
+				class="me-3 h-10 w-6 sm:absolute sm:start-[-4.5rem] sm:me-0 sm:h-20 sm:w-12"
+				style={{
+					fillRule: "evenodd",
+					clipRule: "evenodd",
+					strokeLinejoin: "round",
+					strokeMiterlimit: 2,
+				}}
+				transform="matrix(-1,0,0,1,0,0)"
+			>
+				<title>Logo</title>
+				<path
+					id="Icons"
+					x={-1024}
+					y={-128}
+					width={1280}
+					height={800}
+					style={{
+						fill: "none",
+					}}
+					d="M-128 -16H32V84H-128V-16z"></path>
+				<g id="Icons1">
+					<g id="Strike"></g>
+					<g id="H1"></g>
+					<g id="H2"></g>
+					<g id="H3"></g>
+					<g id="list-ul"></g>
+					<g id="hamburger-1"></g>
+					<g id="hamburger-2"></g>
+					<g id="list-ol"></g>
+					<g id="list-task"></g>
+					<g id="trash"></g>
+					<g id="vertical-menu"></g>
+					<g id="horizontal-menu"></g>
+					<g id="sidebar-2"></g>
+					<g id="Pen"></g>
+					<g id="Pen1"></g>
+					<g id="clock"></g>
+					<g id="external-link"></g>
+					<g id="hr"></g>
+					<g id="info"></g>
+					<g id="warning"></g>
+					<g id="plus-circle"></g>
+					<g id="minus-circle"></g>
+					<g id="vue"></g>
+					<g id="cog"></g>
+					<g id="logo"></g>
+					<g id="radio-check"></g>
+					<g id="eye-slash"></g>
+					<g id="eye"></g>
+					<g id="toggle-off"></g>
+					<g id="shredder"></g>
+					<g id="spinner--loading--dots-"></g>
+					<g id="react"></g>
+					<g id="check-selected"></g>
+					<path
+						id="duck"
+						d="M2.176 3.199s0.257 0.104 0.248 0.361c-0.009 0.258 -0.833 0.37 -0.833 1.387s1.137 1.817 2.402 1.817c1.265 0 2.984 -0.742 2.984 -2.229 0 -2.497 -0.189 -0.767 -2.159 -0.767 -0.654 0 -0.771 -0.223 -0.668 -0.351 0.489 -0.601 0.668 -2.181 -0.927 -2.181 -1.041 0.022 -1.292 0.868 -1.291 1.073 0.001 0.144 -0.15 0.193 -0.913 0.164 -0.192 0.702 1.157 0.726 1.157 0.726Zm0.471 -1.296a0.25 0.25 0 1 1 -0.25 0.25c0 -0.138 0.112 -0.25 0.25 -0.25Z"
+					></path>
+					<g id="turn-off"></g>
+					<g id="code-block"></g>
+					<g id="user"></g>
+					<g id="coffee-bean"></g>
+					<g id="coffee-beans">
+						<g id="coffee-bean1"></g>
+					</g>
+					<g id="coffee-bean-filled"></g>
+					<g id="coffee-beans-filled">
+						<g id="coffee-bean2"></g>
+					</g>
+					<g id="clipboard"></g>
+					<g id="clipboard-paste"></g>
+					<g id="clipboard-copy"></g>
+					<g id="Layer1"></g>
+				</g>
+			</svg>
+			<span class="text-xl font-bold sm:text-2xl">Ahmed</span>
+		</a>
+		<nav
+			id="navigation-menu"
+			class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-dashed sm:divide-accent sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
+			aria-label="Main menu"
+		>
+			{
+				menuLinks.map((link) => (
+					<a
+						href={link.path}
+						class="px-4 py-4 sm:py-0 sm:hover:underline"
+						aria-current={url.pathname === link.path ? "page" : false}
+						rel="prefetch"
+					>
+						{link.title}
+					</a>
+				))
+			}
+		</nav>
+	</div>
+	<Search />
+	<ThemeToggle />
+	<button
+		id="toggle-navigation-menu"
+		class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
+		type="button"
+		aria-label="Open main menu"
+		aria-expanded="false"
+		aria-haspopup="menu"
+	>
+		<svg
+			id="line-svg"
+			class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+			aria-hidden="true"
+			focusable="false"
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+		>
+			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+		</svg>
+		<svg
+			id="cross-svg"
+			class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+			class="text-accent"
+			aria-hidden="true"
+			focusable="false"
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+		>
+			<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+		</svg>
+	</button>
+</header>
