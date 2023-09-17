@@ -1,0 +1,41 @@
+[
+	{
+		"title": "medevs.xyz",
+		"description": "My personal blog and portfolio",
+		"slug": "medevs",
+		"language": "Astro",
+		"link": "https://medevs.xyz",
+		"sourceCode": "https://github.com/medevs/medevs.xyz"
+	},
+	{
+		"title": "primalbound",
+		"description": "Primal Bound Blog",
+		"slug": "primalbound",
+		"language": "NextJs",
+		"link": "https://primalbound.com",
+		"sourceCode": "https://github.com/medevs/primalbound"
+	},
+	{
+		"title": "PromptShare",
+		"description": "a platform for sharing and discovering well-crafted prompts.",
+		"slug": "prompt-share",
+		"language": "NextJs",
+		"sourceCode": "https://github.com/medevs/prompt-share"
+	},
+	{
+		"title": "BlogGenius",
+		"description": "Instantly generate tailored outlines for your topics, easily edit, and craft captivating blog posts.",
+		"slug": "blog-genius",
+		"language": "NextJs",
+		"link": "https://blog-genius.vercel.app",
+		"sourceCode": "https://github.com/medevs/blog-genius"
+	},
+	{
+		"title": "StoryShare",
+		"description": "Threads Like Clone",
+		"slug": "story-share",
+		"language": "NextJs",
+		"link": "https://vercel.com/oublihia/story-share",
+		"sourceCode": "https://github.com/medevs/threads-v2"
+	}
+]

@@ -1,0 +1,17 @@
+---
+import PageLayout from "@/layouts/Base";
+import ProjectCard from "@/components/ProjectCard";
+import projects from "../../utils/projects.json";
+
+const meta = {
+	title: "Projects",
+	description: "A list of somme projects",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">Projects</h1>
+	<section class="mb-24 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+		{projects.map((project) => <ProjectCard project={project} />)}
+	</section>
+</PageLayout>
