@@ -1,9 +1,4 @@
 ---
-// import ForkIcon from "@icons/ForkIcon.astro";
-// import StarIcon from "@icons/StarIcon.astro";
-// import InProduction from "./InProduction.astro";
-// import Language from "./Language.astro";
-
 interface Project {
 	title: string;
 	description: string;
@@ -17,26 +12,26 @@ const { project } = Astro.props as { project: Project };
 ---
 
 <div
-	class="relative transform rounded-lg bg-slate-400 px-2 py-6 shadow-md transition-transform duration-300 hover:scale-105 dark:bg-gray-800 mb-4"
+	class="relative mb-4 transform rounded-lg bg-white px-2 py-6 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800"
 >
 	<div class="flex flex-wrap gap-2 px-6 text-lg">
 		<div class="text-green flex-grow">{project.title}</div>
 	</div>
-	<div class="max-h-40 overflow-y-auto mb-6 px-6 py-4">
+	<div class="mb-6 max-h-40 overflow-y-auto px-6 py-4">
 		<!-- Adjust max height as needed -->
-		<p class="my-2 text-gray-200">{project.description}</p>
+		<p class="my-2 text-quote">{project.description}</p>
 	</div>
 	<div class="absolute bottom-4 left-6">
-		<p class="mt-4 mb-1">
-			<span class="mr-4 text-sm text-gray-200">Language:</span>
+		<p class="mb-1 mt-4">
+			<span class="mr-4 text-sm text-gray-400">Language:</span>
 			<span
-				class="rounded-full bg-blue-500 px-2 py-1 text-xs text-white dark:bg-blue-400 dark:text-gray-800"
+				class="rounded-full px-2 py-1 text-xs text-white bg-accent"
 			>
 				{project.language}
 			</span>
 		</p>
 		<a
-			class="text-blue-500 hover:text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-500"
+			class="text-accent"
 			target="_blank"
 			href={project.link && project.link}
 		>

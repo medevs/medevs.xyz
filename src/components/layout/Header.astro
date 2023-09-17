@@ -2,6 +2,7 @@
 import ThemeToggle from "../ThemeToggle.astro";
 import Search from "../Search.astro";
 import { menuLinks } from "@/site-config";
+import Ahmed from "../Ahmed.astro";
 
 const url = new URL(Astro.request.url);
 ---
@@ -120,7 +121,8 @@ const url = new URL(Astro.request.url);
 					<g id="Layer1"></g>
 				</g>
 			</svg>
-			<span class="text-xl font-bold sm:text-2xl">Ahmed</span>
+			<!-- <span class="text-xl font-bold sm:text-2xl">Ahmed</span> -->
+			<Ahmed />
 		</a>
 		<nav
 			id="navigation-menu"

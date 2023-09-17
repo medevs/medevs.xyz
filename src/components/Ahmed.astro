@@ -1,0 +1,58 @@
+---
+
+---
+
+<h1>
+	<span>A</span>
+	<span>H</span>
+	<span>M</span>
+	<span>E</span>
+	<span>D</span>
+</h1>
+
+<style lang="css">
+  h1 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+  }
+
+  @keyframes coolAnimation {
+    0% {
+      transform: scale(1) translateX(0) translateY(0);
+      opacity: 0;
+    }
+
+    30% {
+      transform: scale(1.2) translateX(0) translateY(0);
+      opacity: 1;
+    }
+
+    70% {
+      transform: scale(1) translateX(0) translateY(0);
+      opacity: 0.7;
+    }
+
+    100% {
+      transform: scale(1) translateX(0) translateY(0);
+      opacity: 0;
+    }
+  }
+
+  span {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px; /* Adjust the margin as needed */
+    animation: coolAnimation 2s infinite alternate ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    span {
+      animation: none;
+    }
+  }
+</style>

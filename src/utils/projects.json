@@ -31,11 +31,11 @@
 		"sourceCode": "https://github.com/medevs/blog-genius"
 	},
 	{
-		"title": "StoryShare",
+		"title": "TipHub",
 		"description": "Threads Like Clone",
-		"slug": "story-share",
+		"slug": "tip-hub",
 		"language": "NextJs",
-		"link": "https://vercel.com/oublihia/story-share",
+		"link": "https://tiphub.vercel.app/",
 		"sourceCode": "https://github.com/medevs/threads-v2"
 	}
 ]
