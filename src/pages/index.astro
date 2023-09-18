@@ -5,27 +5,65 @@ import SocialList from "@/components/SocialList";
 import { getAllPosts, sortMDByDate } from "@/utils";
 import TechIcons from "@/components/TechIcons";
 
+// import { Image } from "astro:assets";
+// import Ahmed from "@/assets/ahmed.jpg";
+
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section class="mb-6">
-		<h1 class="title mb-6">Hello World!</h1>
-		<p class="mb-4">
-			I'm Ahmed, a software developer based in germany. I work as a full stack web developer building web apps, mostly around the JavaScript ecosystem.
-		</p>
-		<SocialList />
+	<section
+		class="mb-8 flex flex-col items-center justify-center md:flex-row md:space-x-4"
+	>
+		<!-- Profile Image Container with rounded border -->
+		<div class="border-primary h-24 w-24 overflow-hidden rounded-full border-2">
+			<!-- <Image
+				src={Ahmed}
+				alt="Profile"
+				loading="eager"
+				fetchpriority="high"
+				class="h-full w-full rounded-full object-cover"
+			/> -->
+		</div>
+		<div class="text-center md:text-left">
+			<h1 class="text-3xl font-semibold">Ahmed</h1>
+			<p class="text-lg">@medevs</p>
+			<p class="text-lg md:max-w-lg">
+				<span class="font-semibold">Passionate Full Stack Software Developer</span> | <span
+					class="font-semibold">JavaScript Enthusiast</span
+				>.
+				<br />
+				I'm a passionate Full Stack Software Developer dedicated to crafting <span
+					class="font-semibold">fast</span
+				>, <span class="font-semibold">modern</span>, and user-friendly applications. With a strong
+				focus on the <span class="font-semibold">JavaScript ecosystem</span>, I bring expertise in
+				creating <span class="font-semibold">efficient</span>, <span class="font-semibold"
+					>elegant</span
+				> solutions.
+				<br />
+				Let's collaborate on your next project and turn ideas into <span class="font-semibold"
+					>remarkable</span
+				> software.
+			</p>
+		</div>
 	</section>
+	<div class="my-4 flex items-center space-x-4 text-center md:text-left">
+		<span class="text-sm">📍 Bremen, Germany</span>
+		<span class="text-sm">🎂 30 June</span>
+		<span class="text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
+	</div>
+	<SocialList />
+
 	<TechIcons />
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4 sm:space-y-2">
+	<section aria-label="Blog post list" class="mt-8">
+		<h2 class="mb-4 text-2xl font-semibold">Posts</h2>
+		<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
+				allPostsByDate.map((post) => (
+					<li class="flex flex-col">
+						<PostPreview post={post} />
 					</li>
 				))
 			}
