@@ -3,10 +3,70 @@ import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { getAllPosts, sortMDByDate } from "@/utils";
-import TechIcons from "@/components/TechIcons";
+import TechBadge from "@/components/TechBadge";
 
-// import { Image } from "astro:assets";
-// import Ahmed from "@/assets/ahmed.jpg";
+const technologies = [
+	{
+		name: "JavaScript",
+		imgSrc:
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png",
+		altSrc: "JavaScript Logo",
+		link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+	},
+	{
+		name: "TypeScript",
+		imgSrc:
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+		altSrc: "TypeScript Logo",
+		link: "https://www.typescriptlang.org/",
+	},
+	{
+		name: "Node.js",
+		imgSrc: "https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png",
+		altSrc: "Node.js Logo",
+		link: "https://nodejs.org/en/",
+	},
+	{
+		name: "React",
+		imgSrc:
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png",
+		altSrc: "React Logo",
+		link: "https://reactjs.org/",
+	},
+	{
+		name: "Next.js",
+		imgSrc: "https://static.netify.ai/logos/v/e/r/irepry/icon.png?v=1",
+		altSrc: "Next.js Logo",
+		link: "https://nextjs.org/",
+	},
+	{
+		name: "Astro",
+		imgSrc: "https://bestofjs.org/logos/astro.dark.svg",
+		altSrc: "Astro Logo",
+		link: "https://astro.build/",
+	},
+	{
+		name: "Tailwind CSS",
+		imgSrc: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+		altSrc: "Tailwind CSS Logo",
+		link: "https://tailwindcss.com/",
+	},
+	{
+		name: "Mongo DB",
+		imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png",
+		altSrc: "Mongo DB Logo",
+		link: "https://www.mongodb.com/",
+	},
+	{
+		name: "PHP",
+		imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PHP_Logo%2C_text_only.svg/640px-PHP_Logo%2C_text_only.svg.png",
+		altSrc: "PHP Logo",
+		link: "https://php.net/",
+	}
+];
+
+import { Image } from "astro:assets";
+import Ahmed from "@/assets/ahmed.jpg";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
@@ -14,59 +74,82 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section
-		class="mb-8 flex flex-col items-center justify-center md:flex-row md:space-x-4"
-	>
-		<!-- Profile Image Container with rounded border -->
-		<div class="border-primary h-24 w-24 overflow-hidden rounded-full border-2">
-			<!-- <Image
+	<main>
+		<div class="flex flex-col-reverse items-center justify-center md:flex-row">
+			<div class="w-[350px] text-white md:w-[450px]">
+				<h1 class="glitch mb-1 text-3xl font-bold tracking-tight md:text-5xl">Ahmed Oublihi</h1>
+				<h2 class="glitch mt-2 text-lg">
+					<strong class="font-semibold">Passionate Full Stack Software Developer</strong> | <strong
+						class="font-semibold">JavaScript Enthusiast</strong
+					>.Full-Stack Dev, seeking a new coding journey!
+				</h2>
+				<p class="mt-4 text-left">
+					I'm a passionate Full Stack Software Developer dedicated to crafting <strong
+						class="font-semibold">fast</strong
+					>, <strong class="font-semibold">modern</strong>, and user-friendly applications. With a
+					strong focus on the <strong class="font-semibold">JavaScript ecosystem</strong>, I bring
+					expertise in creating <strong class="font-semibold">efficient</strong>, <strong
+						class="font-semibold">elegant</strong
+					> solutions.
+					<br />Let's collaborate on your next project and turn ideas into <strong
+						class="font-semibold">remarkable</strong
+					> software.
+				</p>
+			</div>
+			<Image
 				src={Ahmed}
 				alt="Profile"
 				loading="eager"
 				fetchpriority="high"
-				class="h-full w-full rounded-full object-cover"
-			/> -->
+				class="mb-10 ml-0 h-[120px] w-[120px] rounded-full md:mb-0 md:ml-10 md:h-[240px] md:w-[240px]"
+			/>
 		</div>
-		<div class="text-center md:text-left">
-			<h1 class="text-3xl font-semibold">Ahmed</h1>
-			<p class="text-lg">@medevs</p>
-			<p class="text-lg md:max-w-lg">
-				<span class="font-semibold">Passionate Full Stack Software Developer</span> | <span
-					class="font-semibold">JavaScript Enthusiast</span
-				>.
-				<br />
-				I'm a passionate Full Stack Software Developer dedicated to crafting <span
-					class="font-semibold">fast</span
-				>, <span class="font-semibold">modern</span>, and user-friendly applications. With a strong
-				focus on the <span class="font-semibold">JavaScript ecosystem</span>, I bring expertise in
-				creating <span class="font-semibold">efficient</span>, <span class="font-semibold"
-					>elegant</span
-				> solutions.
-				<br />
-				Let's collaborate on your next project and turn ideas into <span class="font-semibold"
-					>remarkable</span
-				> software.
-			</p>
+		<div class="my-4 flex items-center space-x-4 text-center md:text-left">
+			<span class="text-sm">📍 Bremen, Germany</span>
+			<span class="text-sm">🎂 30 June</span>
+			<span class="text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
 		</div>
-	</section>
-	<div class="my-4 flex items-center space-x-4 text-center md:text-left">
-		<span class="text-sm">📍 Bremen, Germany</span>
-		<span class="text-sm">🎂 30 June</span>
-		<span class="text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
-	</div>
-	<SocialList />
-
-	<TechIcons />
-	<section aria-label="Blog post list" class="mt-8">
-		<h2 class="mb-4 text-2xl font-semibold">Posts</h2>
-		<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-			{
-				allPostsByDate.map((post) => (
-					<li class="flex flex-col">
-						<PostPreview post={post} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+		<SocialList />
+		<div class="my-10 flex items-center justify-center md:my-16">
+			<div class="w-[350px] text-white md:w-[740px]">
+				<h2 class="text-3xl font-bold">Technologies</h2>
+				<p class="mt-4 text-left">
+					I like playing around and learning new programming languages, frameworks and libraries.
+					These are the technologies that I love working with:
+				</p>
+				<div class="mt-10 grid grid-cols-2 gap-y-5 md:grid-cols-3 md:gap-x-4 md:gap-y-8">
+					{
+						technologies.map((tech) => (
+							<a href={tech.link} class="cursor-pointer text-gray-300">
+								<TechBadge {...tech} />
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<div class="my-10 flex items-center justify-center md:my-16">
+			<div class="w-[350px] text-white md:w-[740px]">
+				<h2 class="text-3xl font-bold">Projects</h2>
+				<!-- <div class="mt-10 grid grid-cols-1 gap-y-5 md:grid-cols-2 md:gap-x-4 md:gap-y-8">
+					{repos.map((repo: PinnedRepos) => <ProjectCard {...repo} />)}
+				</div> -->
+				<p class="mt-4">
+					comming soon...
+				</p>
+			</div>
+		</div>
+		<section aria-label="Blog post list" class="mt-16">
+			<h2 class="title mb-4 text-xl">Posts</h2>
+			<ul class="space-y-4 sm:space-y-2">
+				{
+					allPostsByDate.map((p) => (
+						<li class="flex flex-col gap-x-2 sm:flex-row">
+							<PostPreview post={p} />
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
 </PageLayout>
