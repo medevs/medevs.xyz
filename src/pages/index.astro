@@ -53,16 +53,18 @@ const technologies = [
 	},
 	{
 		name: "Mongo DB",
-		imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png",
+		imgSrc:
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png",
 		altSrc: "Mongo DB Logo",
 		link: "https://www.mongodb.com/",
 	},
 	{
 		name: "PHP",
-		imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PHP_Logo%2C_text_only.svg/640px-PHP_Logo%2C_text_only.svg.png",
+		imgSrc:
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PHP_Logo%2C_text_only.svg/640px-PHP_Logo%2C_text_only.svg.png",
 		altSrc: "PHP Logo",
 		link: "https://php.net/",
-	}
+	},
 ];
 
 import { Image } from "astro:assets";
@@ -76,7 +78,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 <PageLayout meta={{ title: "Home" }}>
 	<main>
 		<div class="flex flex-col-reverse items-center justify-center md:flex-row">
-			<div class="w-[350px] text-white md:w-[450px]">
+			<div class="w-[350px] md:w-[450px]">
 				<h1 class="glitch mb-1 text-3xl font-bold tracking-tight md:text-5xl">Ahmed Oublihi</h1>
 				<h2 class="glitch mt-2 text-lg">
 					<strong class="font-semibold">Passionate Full Stack Software Developer</strong> | <strong
@@ -111,7 +113,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		</div>
 		<SocialList />
 		<div class="my-10 flex items-center justify-center md:my-16">
-			<div class="w-[350px] text-white md:w-[740px]">
+			<div class="w-[350px] md:w-[740px]">
 				<h2 class="text-3xl font-bold">Technologies</h2>
 				<p class="mt-4 text-left">
 					I like playing around and learning new programming languages, frameworks and libraries.
@@ -120,7 +122,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 				<div class="mt-10 grid grid-cols-2 gap-y-5 md:grid-cols-3 md:gap-x-4 md:gap-y-8">
 					{
 						technologies.map((tech) => (
-							<a href={tech.link} class="cursor-pointer text-gray-300">
+							<a href={tech.link} class="cursor-pointe">
 								<TechBadge {...tech} />
 							</a>
 						))
@@ -129,14 +131,12 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			</div>
 		</div>
 		<div class="my-10 flex items-center justify-center md:my-16">
-			<div class="w-[350px] text-white md:w-[740px]">
+			<div class="w-[350px] md:w-[740px]">
 				<h2 class="text-3xl font-bold">Projects</h2>
 				<!-- <div class="mt-10 grid grid-cols-1 gap-y-5 md:grid-cols-2 md:gap-x-4 md:gap-y-8">
 					{repos.map((repo: PinnedRepos) => <ProjectCard {...repo} />)}
 				</div> -->
-				<p class="mt-4">
-					comming soon...
-				</p>
+				<p class="mt-4">comming soon...</p>
 			</div>
 		</div>
 		<section aria-label="Blog post list" class="mt-16">
