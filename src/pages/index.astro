@@ -83,16 +83,17 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			<div class="">
 				<h1 class="glitch mb-1 text-3xl font-bold tracking-tight md:text-5xl">Ahmed Oublihi</h1>
 				<h2 class="glitch mt-2 text-lg">
-					<strong>Full Stack Web Developer</strong> | <strong
-						>JavaScript Enthusiast</strong
-					>, seeking a new coding journey!
+					<strong>Full Stack Web Developer</strong> | <strong>JavaScript Enthusiast</strong>,
+					seeking a new coding journey!
 				</h2>
 				<p class="mt-4 text-left">
-					I'm a passionate Full Stack Web Developer dedicated to crafting <strong>fast</strong
-					>, <strong>modern</strong>, and user-friendly applications. With a strong focus on the <strong
+					I'm a passionate Full Stack Web Developer dedicated to crafting <strong>fast</strong>, <strong
+						>modern</strong
+					>, and user-friendly applications. With a strong focus on the <strong
 						>JavaScript ecosystem</strong
-					>, I bring expertise in creating <strong>efficient</strong>, <strong>elegant </strong
-					>solutions.
+					>, I bring expertise in creating <strong>efficient</strong>, <strong
+						>elegant
+					</strong>solutions.
 					<br />Let's collaborate on your next project and turn ideas into <strong
 						>remarkable</strong
 					> software.
@@ -132,11 +133,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		</div>
 		<div class="">
 			<div class="">
-				<h2 class="text-3xl font-bold mb-6">Selected Projects</h2>
+				<h2 class="mb-6 text-3xl font-bold">Selected Projects</h2>
 				<section class="mb-24 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-					{projects.slice(0, 3).map((project) => (
-						<ProjectCard project={project} />
-					))}
+					{projects.slice(0, 3).map((project) => <ProjectCard project={project} />)}
+					<a
+						href="/projects"
+						class="inline-block text-blue-500 transition duration-300 ease-in-out hover:text-blue-700"
+						>See More...</a
+					>
 				</section>
 			</div>
 		</div>
