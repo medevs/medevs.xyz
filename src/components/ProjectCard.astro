@@ -12,30 +12,23 @@ const { project } = Astro.props as { project: Project };
 ---
 
 <div
-	class="relative mb-4 transform rounded-lg bg-white px-2 py-6 shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gray-800"
+	class="relative mb-4 transform rounded-lg bg-gradient-to-b from-blue-400 via-purple-500 to-pink-500 px-4 py-6 text-white shadow-lg transition-transform duration-300 hover:scale-105 dark:bg-gradient-to-b dark:from-gray-800 dark:via-gray-900 dark:to-black"
 >
-	<div class="flex flex-wrap gap-2 px-6 text-lg">
-		<div class="text-green flex-grow">{project.title}</div>
+	<div class="mb-3 text-2xl font-semibold">{project.title}</div>
+	<div class="mb-6 max-h-36 overflow-y-auto">
+		<p class="my-2">{project.description}</p>
 	</div>
-	<div class="mb-6 max-h-40 overflow-y-auto px-6 py-4">
-		<!-- Adjust max height as needed -->
-		<p class="my-2 text-quote">{project.description}</p>
-	</div>
-	<div class="absolute bottom-4 left-6">
-		<p class="mb-1 mt-4">
-			<span class="mr-4 text-sm text-gray-400">Language:</span>
+	<br />
+	<div class="absolute bottom-4 left-4 text-sm">
+		<p class="mb-1">
+			<span class="mr-2 text-gray-200">Tech:</span>
 			<span
-				class="rounded-full px-2 py-1 text-xs text-white bg-accent"
+				class="rounded-full bg-gray-800 px-2 py-1 text-gray-200 dark:bg-gray-300 dark:text-gray-800"
+				>{project.language}</span
 			>
-				{project.language}
-			</span>
 		</p>
-		<a
-			class="text-accent"
-			target="_blank"
-			href={project.link && project.link}
-		>
-			{project.title}
+		<a class="text-accent hover:underline" target="_blank" href={project.link && project.link}>
+			View...
 		</a>
 	</div>
 </div>

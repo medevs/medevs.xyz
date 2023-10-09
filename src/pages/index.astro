@@ -87,30 +87,33 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 					seeking a new coding journey!
 				</h2>
 				<p class="mt-4 text-left">
-					I'm a passionate Full Stack Web Developer dedicated to crafting <strong>fast</strong>, <strong
-						>modern</strong
-					>, and user-friendly applications. With a strong focus on the <strong
-						>JavaScript ecosystem</strong
-					>, I bring expertise in creating <strong>efficient</strong>, <strong
-						>elegant
-					</strong>solutions.
+					I'm a passionate Full Stack Web Developer dedicated to crafting <strong>fast</strong>,
+					<strong>modern</strong>, and user-friendly applications. With a strong focus on the
+					<strong>JavaScript ecosystem</strong>, I bring expertise in creating <strong
+						>efficient</strong
+					>,
+					<strong>elegant</strong> solutions.
 					<br />Let's collaborate on your next project and turn ideas into <strong
 						>remarkable</strong
 					> software.
 				</p>
 			</div>
-			<Image
-				src={Ahmed}
-				alt="Profile"
-				loading="eager"
-				fetchpriority="high"
-				class="mb-10 ml-0 h-[120px] w-[120px] rounded-full md:mb-0 md:ml-10 md:h-[240px] md:w-[240px]"
-			/>
+			<div class="mb-10 ml-0 md:ml-10">
+				<div class="overflow-hidden sm:rounded-full">
+					<Image
+						src={Ahmed}
+						alt="Profile"
+						loading="eager"
+						fetchpriority="high"
+						class="h-full w-full object-cover"
+					/>
+				</div>
+			</div>
 		</div>
 		<div class="my-4 flex items-center space-x-4 text-center md:text-left">
-			<span class="text-sm">📍 Bremen, Germany</span>
-			<span class="text-sm">🎂 30 June</span>
-			<span class="text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
+			<span class="animate-pulse text-sm">📍 Bremen, Germany</span>
+			<span class="animate-pulse text-sm">🎂 30 June</span>
+			<span class="animate-bounce text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
 		</div>
 		<SocialList />
 		<div class="my-10 flex items-center justify-center md:my-16">
