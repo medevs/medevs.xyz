@@ -31,6 +31,14 @@
 		"sourceCode": "https://github.com/medevs/blog-genius"
 	},
 	{
+		"title": "RemindMe",
+		"description": "Full Stack Reminder App to create coleection of Tasks with a modern and beautiful UI",
+		"slug": "blog-genius",
+		"language": "Next.js, Tailwind CSS, Shadcn UI, Prisma,  Clerk",
+		"link": "https://remind-me-beige.vercel.app/",
+		"sourceCode": "https://github.com/medevs/remind-me"
+	},
+	{
 		"title": "TipHub",
 		"description": "A platform for creating and sharing threaded conversations on various topics.",
 		"slug": "tip-hub",
