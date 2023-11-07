@@ -79,43 +79,50 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
 <PageLayout meta={{ title: "Home" }}>
 	<main>
-		<div class="flex flex-col-reverse items-center justify-center md:flex-row">
-			<div class="">
-				<h1 class="glitch mb-1 text-3xl font-bold tracking-tight md:text-5xl">Ahmed Oublihi</h1>
-				<h2 class="glitch mt-2 text-lg">
-					<strong>Full Stack Web Developer</strong> | <strong>JavaScript Enthusiast</strong>,
-					seeking a new coding journey!
-				</h2>
-				<p class="mt-4 text-left">
-					I'm a passionate Full Stack Web Developer dedicated to crafting <strong>fast</strong>,
-					<strong>modern</strong>, and user-friendly applications. With a strong focus on the
-					<strong>JavaScript ecosystem</strong>, I bring expertise in creating <strong
-						>efficient</strong
-					>,
-					<strong>elegant</strong> solutions.
-					<br />Let's collaborate on your next project and turn ideas into <strong
-						>remarkable</strong
-					> software.
-				</p>
-			</div>
-			<div class="mb-10 ml-0 md:ml-10">
-				<div class="overflow-hidden sm:rounded-full">
+		<div class="flex flex-col overflow-hidden rounded-lg shadow-md">
+			<div class="p-6">
+				<div class="flex items-center space-x-4">
 					<Image
 						src={Ahmed}
 						alt="Profile"
 						loading="eager"
 						fetchpriority="high"
-						class="h-full w-full object-cover"
+						class="rounded-full"
+						,
+						style="aspect-ratio: 100/100; object-fit: cover;"
+						height="100"
+						width="100"
 					/>
+					<div>
+						<h2 class="text-xl font-bold text-gray-900 dark:text-white">Ahmed Oublihi</h2>
+						<p class="text-sm text-gray-500 dark:text-gray-300">
+							Full Stack Web Developer | JavaScript Enthusiast
+						</p>
+					</div>
+				</div>
+				<div class="mt-4 space-y-2">
+					<p class="mt-4 text-left">
+						I'm a passionate Full Stack Web Developer dedicated to crafting <strong>fast</strong>,
+						<strong>modern</strong>, and user-friendly applications. With a strong focus on the
+						<strong>JavaScript ecosystem</strong>, I bring expertise in creating <strong
+							>efficient</strong
+						>,
+						<strong>elegant</strong> solutions.
+						<br />Let's collaborate on your next project and turn ideas into <strong
+							>remarkable</strong
+						> software.
+					</p>
+				</div>
+				<div class="mt-6 flex space-x-3">
+					<SocialList />
+				</div>
+				<div class="my-4 flex items-center space-x-4 text-center md:text-left">
+					<span class="animate-pulse text-sm">📍 Bremen, Germany</span>
+					<span class="animate-pulse text-sm">🎂 30 June</span>
+					<span class="animate-bounce text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
 				</div>
 			</div>
 		</div>
-		<div class="my-4 flex items-center space-x-4 text-center md:text-left">
-			<span class="animate-pulse text-sm">📍 Bremen, Germany</span>
-			<span class="animate-pulse text-sm">🎂 30 June</span>
-			<span class="animate-bounce text-sm">🌑🌒🌓🌔🌕🌖🌗🌘🌑</span>
-		</div>
-		<SocialList />
 		<div class="my-10 flex items-center justify-center md:my-16">
 			<div class="">
 				<h2 class="text-3xl font-bold">Technologies</h2>
