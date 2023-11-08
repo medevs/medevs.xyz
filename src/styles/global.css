@@ -4,25 +4,26 @@
 
 @layer base {
 	:root {
-		color-scheme: light;
-		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-		--theme-bg: 0deg 0% 98%;
-		--theme-link: 172deg 18% 41%;
-		--theme-text: 203deg 11% 15%;
-		--theme-accent: 351deg 66% 48%;
-		--theme-accent-2: 0deg 0% 7%;
-		--theme-quote: 351deg 66% 48%;
-	}
+    color-scheme: light;
+    /* Blue as the primary color */
+    --theme-bg: 210deg 50% 90%; /* Light blue background */
+    --theme-link: 210deg 100% 50%; /* Vibrant blue link color */
+    --theme-text: 210deg 10% 30%; /* Dark blue text color */
+    --theme-accent: 210deg 50% 50%; /* Mid-tone blue accent color */
+    --theme-accent-2: 210deg 10% 10%; /* Dark blue accent-2 color */
+    --theme-quote: 210deg 20% 40%; /* Blueish quote color */
+  }
 
-	:root.dark {
-		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
-		--theme-quote: 102deg 100% 86%;
-	}
+  :root.dark {
+    color-scheme: dark;
+    /* Adjust dark mode colors to your preference */
+    --theme-bg: 210deg 10% 10%; /* Dark blue background in dark mode */
+    --theme-link: 210deg 80% 80%; /* Lighter blue link color in dark mode */
+    --theme-text: 210deg 5% 90%; /* Light text color in dark mode */
+    --theme-accent: 210deg 60% 70%; /* Brighter blue accent color in dark mode */
+    --theme-accent-2: 210deg 10% 30%; /* Darker blue accent-2 color in dark mode */
+    --theme-quote: 210deg 15% 50%; /* Adjusted quote color in dark mode */
+  }
 
 	html {
 		@apply scroll-smooth;
