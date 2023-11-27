@@ -146,11 +146,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			<div class="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-2 lg:gap-5">
 				{projects.slice(0, 4).map((project) => <ProjectCard project={project} />)}
 			</div>
-			<a
-				href="/projects"
-				class="text-blue-500 transition duration-300 ease-in-out hover:text-blue-700">See More...</a
-			>
+			<div class="text-center mt-12">
+				<a
+					href="/projects"
+					class="inline-block rounded border border-blue-500 bg-blue-100 px-4 py-2 text-blue-500 transition duration-300 ease-in-out hover:bg-blue-200 hover:text-blue-700"
+				>
+					Explore More Projects...
+				</a>
+			</div>
 		</section>
+
 		<section aria-label="Blog post list">
 			<h2 class="title mb-4 text-xl">Posts</h2>
 			<ul class="space-y-4 sm:space-y-2">

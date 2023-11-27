@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon";
+
 interface Project {
 	title: string;
 	description: string;
@@ -35,12 +37,30 @@ const { project } = Astro.props as { project: Project };
 	</div>
 	<hr class="mx-6 my-3 border-t border-gray-300 dark:border-gray-600" />
 	<div class="flex items-end justify-between px-6 py-4">
-		<a
-			class="text-blue-100 hover:underline dark:text-blue-400"
-			target="_blank"
-			href={project.link ? project.link : project.sourceCode}
-		>
-			View...
-		</a>
+		{
+			project.link && (
+				<a
+					class="flex items-center text-blue-100 hover:underline dark:text-blue-400"
+					target="_blank"
+					href={project.link}
+				>
+					<Icon class="mr-2 h-6 w-6" name="mdi:web" aria-hidden="true" focusable="false" />
+					View on Web
+				</a>
+			)
+		}
+		{project.link && project.sourceCode && <span class="mx-2">|</span>}
+		{
+			project.sourceCode && (
+				<a
+					class="flex items-center text-blue-100 hover:underline dark:text-blue-400"
+					target="_blank"
+					href={project.sourceCode}
+				>
+					<Icon class="mr-2 h-6 w-6" name="mdi:github" aria-hidden="true" focusable="false" />
+					View on GitHub
+				</a>
+			)
+		}
 	</div>
 </div>
