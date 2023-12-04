@@ -16,6 +16,14 @@
 		"sourceCode": "https://github.com/medevs/primalbound-v2"
 	},
 	{
+		"title": "Geniusdiary",
+		"description": "AI Journaling App, for taking notes and chat with your passt notes.",
+		"slug": "ai-journaling-app",
+		"language": "Next.js, Tailwind CSS, Shadcn UI, Prisma, MongoDB, Pincone, Clerk",
+		"link": "geniusdiary.vercel.app",
+		"sourceCode": "https://github.com/medevs/ai-journaling-app"
+	},
+	{
 		"title": "PromptShare",
 		"description": "A platform for sharing and discovering thought-provoking writing prompts.",
 		"slug": "prompt-share",
